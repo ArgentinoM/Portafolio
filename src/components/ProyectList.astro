@@ -1,0 +1,60 @@
+---
+import TitlePage from "./TitlePage.astro";
+
+---
+
+<section class="py-20 px-6">
+
+    <!-- Title -->
+     <TitlePage title="Proyectos Destacados" />
+
+    <!-- List -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+    <!-- Proyecto grande -->
+    <article
+        class="relative overflow-hidden rounded-3xl shadow-xl border border-secondary
+                transition-all duration-500 group lg:col-span-2 h-105">
+
+        <img 
+        src="https://res.cloudinary.com/dxxf2jyg8/image/upload/v1765579805/Captura_de_pantalla_2025-12-12_164914_mpwpip.png"
+        class="absolute inset-0 w-full h-full object-cover brightness-110
+                transition-all duration-500  group-hover:scale-105"
+        />
+
+        <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent"></div>
+
+        <div class="absolute bottom-0 p-8 text-white transition-all duration-500 group-hover:-translate-y-2">
+
+        <h3 class="text-3xl font-bold mb-2">Sistema de Reservas</h3>
+
+        <p class="text-sm max-w-md mb-4 opacity-90">
+            Web app para reservas en tiempo real.
+        </p>
+
+        <div class="flex gap-2 flex-wrap mb-6">
+            <span class="tag">Angular</span>
+            <span class="tag">Tailwind</span>
+            <span class="tag">Laravel</span>
+        </div>
+
+        <div class="flex gap-3">
+            <a class="btn" href="https://reservly-eta.vercel.app/" target="_blank">Demo</a>
+            <a class="btn" href="https://github.com/stars/ArgentinoM/lists/reservly" target="_blank">Código</a>
+            <!-- <a class="btn">Más info</a> -->
+        </div>
+        </div>
+    </article>
+
+    </div>
+
+</section>
+
+<style>
+  @reference "../styles/global.css";
+
+  .btn {
+    @apply rounded-md py-1 px-5 text-white cursor-pointer bg-primary/50 hover:bg-primary;
+    transition: background-color 0.3s;
+  }
+</style>

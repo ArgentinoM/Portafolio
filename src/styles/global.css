@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+@theme {
+
+  --color-page: #FAFAFA;
+  --color-primary: #A78A73;
+  --color-secondary: #E4DFD6;
+  --color-tercery: #FFFFFF;
+  --color-font-primary: #1A1A1A;
+  --color-font-secondary: #4A4A4A;
+
+  --font-Jakarta: "Plus Jakarta Sans", sans-serif
+}
