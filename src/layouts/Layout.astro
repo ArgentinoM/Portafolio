@@ -13,28 +13,105 @@ const { title } = Astro.props;
 ---
 
 
-<html lang="en">
+<html data-theme="ligth" lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 		<title>{ title }</title>
-
 	</head>
-	<body class="bg-page font-Jakart text-font-primary overflow-x-hidden">
+	<body class="relative min-h-screen bg-page font-Jakart text-font-primary overflow-x-hidden">
+
+		<canvas class="absolute inset-0 -z-10 w-full h-full"></canvas>
 	
 		<NavBar/>
 
-		<main class="flex flex-col px-30">
+		<main class="flex flex-col pt-40 py-20 px-10 xl:px-30 xl:py-0">
 			
 			<slot/>
 
 		</main>
+
+		<script is:inline>
+			import AOS from "aos";
+			AOS.init();
+		</script>
 	</body>
 </html>
+
+<script>
+
+	const canvas = document.querySelector('canvas') as HTMLCanvasElement;
+	const ctx = canvas.getContext('2d')!;
+
+	let particles: Particles[] =  [];
+	const PARTICLE_COUNT = 120;
+
+	function resizeCanvas() {
+	canvas.width = window.innerWidth;
+	canvas.height = document.body.scrollHeight;
+	}
+
+	class Particles {
+		x: number;
+		y: number;
+		r: number;
+		dx: number;
+		dy: number;
+
+		constructor(){
+			this.x = Math.random() * canvas.width;
+			this.y = Math.random() * canvas.height;
+			this.r = Math.random() * 1.8 + 0.5;
+			this.dx = (Math.random() - 0.5) * 0.15;
+			this.dy = (Math.random() - 0.5) * 0.15;
+		}
+
+		draw(){
+			ctx.beginPath();
+			ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2)
+			ctx.fillStyle = "rgba(167, 138, 115, 0.7)";
+    		ctx.fill();
+		}
+
+		update() {
+			this.x += this.dx;
+			this.y += this.dy;
+
+			if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
+			if (this.y < 0 || this.y > canvas.height) this.dy *= -1;
+
+			this.draw();
+		}
+	}
+	
+	function init() {
+
+		particles = [];
+
+		for (let i = 0; i < PARTICLE_COUNT; i++) {
+			particles.push(new Particles());
+		}
+
+	}
+
+	function animate() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		particles.forEach(p => p.update());
+		requestAnimationFrame(animate);
+	}
+
+	resizeCanvas();
+	init();
+	animate();
+
+	window.addEventListener("resize", () => {
+  		resizeCanvas();
+		init();
+	});
+
+
+</script>

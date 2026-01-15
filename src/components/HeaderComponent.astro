@@ -1,0 +1,100 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header
+  class="grid gap-12 items-center px-10 min-h-[calc(100vh-80px)] text-center
+         xl:grid-cols-2 xl:mt-20 xl:text-left">
+
+  <div class="flex flex-col gap-8">
+
+    <div class="flex flex-col gap-5">
+
+      <div class="flexgap-3 text-5xl xl:text-7xl">
+        <span>Hola,</span>
+        <span class="xl:ml-40">soy</span>
+      </div>
+
+      <h1
+        id="title"
+        class="text-6xl font-bold text-primary xl:text-8xl leading-tight transition-[type]
+               sm:min-h-[2.5em] xl:min-h-[2.5em] md:min-h-0">
+      </h1>
+
+    </div>
+
+    <p class="max-w-xl mx-auto xl:mx-0 leading-relaxed">
+      Desarrollador <b>Fullstack</b> especializado en crear productos digitales completos:
+      interfaces limpias, sistemas estables y arquitecturas escalables.
+      Combino diseño, técnica y orden para construir soluciones eficientes y pensadas para durar.
+    </p>
+
+    <div class="flex gap-3 justify-center xl:justify-start">
+        <a href="mailto:argentinomonroyv@gmail.com" class="links tooltip" data-tip="Contactame">
+            <Icon name="mail"/> 
+        </a>
+        
+        <a
+        href="/Argentino_Monroy_Valencia_CV.pdf"
+        download
+        class="links tooltip"
+        data-tip="Descargar CV"
+        >
+        <Icon name="file" />
+        </a>
+
+        <a href="https://github.com/ArgentinoM" class="links tooltip" target="_blank" data-tip="GitHub">
+            <Icon name="github"/>
+        </a>
+
+        <a href="https://www.linkedin.com/in/argentino-monroy-valencia-42a2052aa/" class="links tooltip" target="_blank" data-tip="Linkedin">
+            <Icon name="linkedin"/>
+        </a>
+    </div>
+
+  </div>
+
+  <div class="max-w-105 mx-auto xl:ml-auto">
+    <img
+      data-aos="fade-left"
+      src="https://res.cloudinary.com/dxxf2jyg8/image/upload/f_auto,q_auto,w_800/IMG_1702-Mejorado-NR_y79sou.jpg"
+      alt="Perfil de Argentino Monroy"
+      width="800"
+      height="1000"
+      loading="eager"
+      decoding="async"
+      class="w-full h-auto object-cover rounded-xl shadow-lg"
+    />
+  </div>
+</header>
+
+<style>
+    @reference "../styles/global.css";
+
+    .links{
+        @apply w-12 h-12 flex items-center justify-center
+                ml-1 text-2xl bg-secondary rounded-[50%]
+                transition-all duration-500 hover:bg-primary
+                hover:text-white;
+	}
+
+	.tooltip {
+        @apply relative
+	}
+
+	.tooltip::after {
+		content: attr(data-tip);
+
+        @apply absolute bottom-[130%] left-1/2 transform-[translateX(-50%)]
+                bg-black text-white px-4 py-2 rounded-md text-[.75rem]
+                whitespace-nowrap opacity-0 pointer-events-none transition-opacity duration-300 ease-in
+                
+	}
+
+    .tooltip:hover::after {
+		opacity: 1;
+	}
+
+</style>
+
+<script src="../scripts/header.ts"></script>

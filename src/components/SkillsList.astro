@@ -3,43 +3,56 @@ import { Skills } from "../data/skills";
 import TitlePage from "./TitlePage.astro";
 ---
 
-<section class="flex flex-col text-center  px-30">
+<section
+  id="skills"
+  class="py-20 px-6 max-w-7xl mx-auto text-center scroll-mt-24"
+>
+  <TitlePage title="Tecnologías y habilidades" />
 
-    <TitlePage title="Tecnologías y habilidades"/>
-
-<div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-6">
+  <div
+    class="grid gap-6
+           grid-cols-2
+           sm:grid-cols-3
+           md:grid-cols-4
+           lg:grid-cols-6"
+  >
     {
-        Skills.map(({ imgUrl, name }) => (
+      Skills.map(({ imgUrl, name }) => (
+        <div
+          class="group flex flex-col items-center gap-3 p-4 rounded-xl
+                 bg-white/10 border border-white/20
+                 shadow-sm transition
+                 hover:shadow-lg hover:shadow-secondary/40"
+        >
 
-            <div class="group flex flex-col items-center gap-3 p-4 rounded-xl
-                        backdrop-blur-xl bg-white/10 border border-white/20
-                        shadow-md transition-all duration-300
-                        hover:shadow-secondary hover:shadow-xl">
+          <div class="relative w-14 h-14 flex items-center justify-center">
+            <div
+              class="absolute inset-0 rounded-full
+                     bg-white/20 border border-white/30
+                     transition-transform duration-300
+                     group-hover:scale-110"
+            ></div>
 
-                <div class="relative w-14 h-14 flex items-center justify-center">
+            <img
+              src={imgUrl}
+              alt={name}
+              width="32"
+              height="32"
+              loading="lazy"
+              class="relative w-8 h-8
+                     transition-transform duration-300
+                     group-hover:scale-110"
+            />
+          </div>
 
-                    <div
-                        class="absolute inset-0 rounded-full bg-white/20
-                               backdrop-blur-md border border-white/30
-                               transition-transform duration-300
-                               group-hover:scale-110">
-                    </div>
-
-                    <img src={imgUrl} alt={name}
-                         class="relative w-8 h-8 transition-all duration-300
-                                group-hover:scale-110 group-hover:drop-shadow-lg" />
-                </div>
-
-                <span class="font-semibold uppercase tracking-wide text-xs">
-                    {name}
-                </span>
-
-            </div>
-            
-        ))
+          <span
+            class="font-medium uppercase tracking-wide text-xs
+                   text-font-secondary"
+          >
+            {name}
+          </span>
+        </div>
+      ))
     }
-</div>
-
-
-
+  </div>
 </section>

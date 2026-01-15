@@ -1,0 +1,128 @@
+---
+import TitlePage from "./TitlePage.astro";
+---
+
+<div
+  id="form-feedback"
+  class="fixed bottom-6 right-6 z-50
+         max-w-sm rounded-xl
+         border border-secondary bg-tercery
+         px-5 py-4 text-sm
+         text-font-primary shadow-lg
+         opacity-0 translate-y-4
+         pointer-events-none
+         transition-all duration-300 ease-out"
+>
+  <span id="form-feedback-text"></span>
+</div>
+
+<section
+  id="contact"
+  class="pt-28 xl:pb-20 px-6 bg-page scroll-mt-24"
+>
+  <TitlePage title="Contáctame" />
+
+  <div class="max-w-4xl mx-auto">
+
+    <div class="mb-12 max-w-xl">
+      <h2
+        class="text-3xl sm:text-4xl font-bold
+               text-primary mt-3 mb-4"
+      >
+        ¿Hablamos?
+      </h2>
+
+      <p class="text-font-secondary leading-relaxed">
+        Si quieres contactarme para una oportunidad, un proyecto
+        o simplemente para conversar, puedes escribirme aquí.
+      </p>
+    </div>
+
+
+    <form
+      id="contact-form"
+      onsubmit="return false"
+      class="rounded-3xl border border-secondary
+             bg-tercery p-8 sm:p-10
+             space-y-7"
+    >
+      <div class="grid gap-6 sm:grid-cols-2">
+        <div>
+          <label
+            for="name"
+            class="block text-sm text-font-secondary mb-2"
+          >
+            Nombre
+          </label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            placeholder="Tu nombre"
+            class="w-full rounded-lg border border-secondary
+                   bg-transparent px-4 py-3
+                   text-font-primary
+                   focus:outline-none
+                   focus:border-primary"
+          />
+        </div>
+
+        <div>
+          <label
+            for="email"
+            class="block text-sm text-font-secondary mb-2"
+          >
+            Correo
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            placeholder="tu@email.com"
+            class="w-full rounded-lg border border-secondary
+                   bg-transparent px-4 py-3
+                   text-font-primary
+                   focus:outline-none
+                   focus:border-primary"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label
+          for="message"
+          class="block text-sm text-font-secondary mb-2"
+        >
+          Mensaje
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          required
+          placeholder="Cuéntame un poco más…"
+          class="w-full rounded-lg border border-secondary
+                 bg-transparent px-4 py-3
+                 text-font-primary resize-none
+                 focus:outline-none
+                 focus:border-primary"
+        ></textarea>
+      </div>
+
+      <div class="flex justify-end">
+        <button
+          type="submit"
+          class="rounded-xl bg-primary px-6 py-2
+                 text-secondary font-medium
+                 transition hover:bg-primary/80 cursor-pointer"
+        >
+          Enviar mensaje
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="../scripts/contact.ts"></script>

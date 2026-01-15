@@ -1,0 +1,84 @@
+---
+import TitlePage from "./TitlePage.astro";
+---
+
+<section
+  id="about"
+  class="py-20 px-6 bg-page scroll-mt-24"
+>
+  <TitlePage title="Sobre mí" />
+
+  <div
+    class="max-w-6xl mx-auto grid gap-14 items-center
+           lg:grid-cols-2"
+  >
+  
+    <div class="max-w-prose">
+      <h2
+        class="text-3xl sm:text-4xl font-bold
+               text-font-primary mt-3 mb-6
+               leading-tight"
+      >
+        Desarrollo proyectos web
+        <br class="hidden sm:block" />
+        mientras sigo formándome
+      </h2>
+
+      <p class="text-font-secondary leading-relaxed mb-5">
+        Soy desarrollador web con formación técnica y actualmente
+        continúo mis estudios, combinando la teoría con la práctica
+        a través de proyectos personales.
+      </p>
+
+      <p class="text-font-secondary leading-relaxed mb-5">
+        Trabajo principalmente con Angular en el frontend y Laravel
+        en el backend, enfocándome en entender cómo se construyen
+        aplicaciones completas y bien estructuradas.
+      </p>
+
+      <p class="text-font-secondary leading-relaxed">
+        Me interesa aprender buenas prácticas, mejorar mi lógica
+        de programación y desarrollar proyectos cada vez más sólidos
+        que reflejen mi crecimiento técnico.
+      </p>
+    </div>
+
+    <!-- INFO CARD -->
+    <div
+      class="rounded-3xl border border-secondary
+             bg-tercery p-8 sm:p-10
+             shadow-sm transition
+             hover:shadow-md"
+    >
+      <ul class="space-y-5">
+        <li class="flex justify-between gap-4 text-sm">
+          <span class="text-font-secondary">Rol</span>
+          <span class="text-font-primary font-medium text-right">
+            Frontend · Backend · Fullstack
+          </span>
+        </li>
+
+        <li class="flex justify-between gap-4 text-sm">
+          <span class="text-font-secondary">Stack principal</span>
+          <span class="text-font-primary font-medium text-right">
+            Angular · Tailwind · TypeScript · Laravel
+          </span>
+        </li>
+
+        <li class="flex justify-between gap-4 text-sm">
+          <span class="text-font-secondary">Enfoque</span>
+          <span class="text-font-primary font-medium text-right">
+            UI limpia · Performance · Escalabilidad
+          </span>
+        </li>
+
+        <li class="flex justify-between gap-4 text-sm">
+          <span class="text-font-secondary">Disponibilidad</span>
+          <span class="text-font-primary font-medium text-right">
+            Tiempo completo · Remoto
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

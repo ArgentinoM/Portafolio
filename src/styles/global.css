@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+html {
+  transition: background-color 1s ease-in-out;
+}
+
+body,
+nav,
+section,
+article{
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease;
+}
 
 @theme {
 
@@ -10,5 +23,17 @@
   --color-font-primary: #1A1A1A;
   --color-font-secondary: #4A4A4A;
 
-  --font-Jakarta: "Plus Jakarta Sans", sans-serif
+  --font-Jakarta: "Plus Jakarta Sans", sans-serif;
+
 }
+
+:root[data-theme="dark"] {
+  --color-page: #12110F;
+  --color-primary: #C1A48D;
+  --color-secondary: #2A2622;
+  --color-tercery: #1C1A18;
+
+  --color-font-primary: #F2F2F2;
+  --color-font-secondary: #B5B1AC;
+}
+

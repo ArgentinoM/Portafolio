@@ -45,14 +45,14 @@ export const Skills: Skill[] = [
         imgUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rxjs/rxjs-original.svg',
         name: 'rxjs'
     },
-    {
-        imgUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg',
-        name: 'vitejs'
-    },
-    {
-        imgUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg',
-        name: 'vitest'
-    },
+    // {
+    //     imgUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg',
+    //     name: 'vitejs'
+    // },
+    // {
+    //     imgUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitest/vitest-original.svg',
+    //     name: 'vitest'
+    // },
     {
         imgUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg',
         name: 'Laravel'
