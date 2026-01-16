@@ -6,19 +6,19 @@ import { Icon } from "astro-icon/components";
   class="grid gap-12 items-center px-10 min-h-[calc(100vh-80px)] text-center
          xl:grid-cols-2 xl:mt-20 xl:text-left">
 
-  <div class="flex flex-col gap-8">
+  <div class="animate-fade-left flex flex-col gap-8">
 
     <div class="flex flex-col gap-5">
 
-      <div class="flexgap-3 text-5xl xl:text-7xl">
+      <div class="text-5xl xl:text-7xl">
         <span>Hola,</span>
         <span class="xl:ml-40">soy</span>
       </div>
 
       <h1
         id="title"
-        class="text-6xl font-bold text-primary xl:text-8xl leading-tight transition-[type]
-               sm:min-h-[2.5em] xl:min-h-[2.5em] md:min-h-0">
+        class="text-6xl font-bold xl:w-1/2 text-primary xl:text-8xl leading-tight transition-[type]
+               min-h-[2.5em] md:min-h-0 xl:min-h-[2.5em]">
       </h1>
 
     </div>
@@ -29,7 +29,7 @@ import { Icon } from "astro-icon/components";
       Combino diseño, técnica y orden para construir soluciones eficientes y pensadas para durar.
     </p>
 
-    <div class="flex gap-3 justify-center xl:justify-start">
+    <div class=" flex gap-3 justify-center xl:justify-start">
         <a href="mailto:argentinomonroyv@gmail.com" class="links tooltip" data-tip="Contactame">
             <Icon name="mail"/> 
         </a>
@@ -54,16 +54,15 @@ import { Icon } from "astro-icon/components";
 
   </div>
 
-  <div class="max-w-105 mx-auto xl:ml-auto">
+  <div class="animate-fade-right max-w-105 mx-auto xl:ml-auto">
     <img
-      data-aos="fade-left"
       src="https://res.cloudinary.com/dxxf2jyg8/image/upload/f_auto,q_auto,w_800/IMG_1702-Mejorado-NR_y79sou.jpg"
       alt="Perfil de Argentino Monroy"
       width="800"
       height="1000"
       loading="eager"
       decoding="async"
-      class="w-full h-auto object-cover rounded-xl shadow-lg"
+      class="w-full animate-show-up h-auto object-cover rounded-xl shadow-lg"
     />
   </div>
 </header>

@@ -17,14 +17,14 @@ import TitlePage from "./TitlePage.astro";
            lg:grid-cols-6"
   >
     {
-      Skills.map(({ imgUrl, name }) => (
+      Skills.map(({ imgUrl, name }, index) => (
         <div
-          class="group flex flex-col items-center gap-3 p-4 rounded-xl
+          class="skill-item animate-fade-right group flex flex-col items-center gap-3 p-4 rounded-xl
                  bg-white/10 border border-white/20
                  shadow-sm transition
                  hover:shadow-lg hover:shadow-secondary/40"
+          style={`--delay: ${index * 60}ms`}
         >
-
           <div class="relative w-14 h-14 flex items-center justify-center">
             <div
               class="absolute inset-0 rounded-full

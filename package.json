@@ -12,9 +12,11 @@
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-free": "^7.1.0",
     "@tailwindcss/vite": "^4.1.18",
-    "aos": "^2.3.4",
     "astro": "^5.16.5",
     "astro-icon": "^1.1.5",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7"
   }
 }
