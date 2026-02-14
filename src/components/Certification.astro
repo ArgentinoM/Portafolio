@@ -1,0 +1,55 @@
+---
+import { Certifications } from "../data/certifications";
+
+
+---
+
+<section id="certificados" class="py-24">
+
+  <div class="text-center mb-16">
+    <h2 class="text-4xl font-semibold tracking-wide">
+      Certificados
+    </h2>
+    <p class="text-gray-500 mt-2">
+      Formación y especialización profesional
+    </p>
+  </div>
+
+  <div class="max-w-6xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3 px-4">
+
+    {
+      Certifications.map(({ name, img, plataform, date, idCredential, urlCredential}, index) => (
+        <a href={urlCredential} target="_blank" 
+        class="group cursor-pointer animate-fade-left bg-tercery rounded-2xl shadow-sm overflow-hidden transition hover:shadow-xl hover:-translate-y-2 duration-300">
+        style={`--delay: ${index * 60}ms`}
+    
+          <div class="overflow-hidden">
+            <img 
+              src={img}
+              alt={name}
+              class="w-full h-60 object-cover transition duration-500 group-hover:scale-105"
+            />
+          </div>
+    
+          <div class="flex justify-between p-6 justify-items-center items-center">
+            <div >
+              <h3 class="text-lg font-semibold text-primary">{name}</h3>
+              <p class="text-sm text-font-primary/80 mt-1">{plataform} • {date}</p>
+            </div>
+
+            {
+              idCredential && (
+                <p class="text-primary "><span class="text-font-primary/40 ">id: </span> {idCredential}</p>
+              )
+            }
+
+          </div>
+    
+        </a>
+      ))
+    }
+
+
+  </div>
+
+</section>

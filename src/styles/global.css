@@ -50,8 +50,13 @@ article{
 }
 
 .animate-fade-left {
-  animation: fade-left 800ms ease-in both;
+ animation: fade-left 800ms ease-out both;
 }
+
+/* .animate-fade-left.is-visible {
+  animation: fade-left 800ms ease-out both;
+  animation-delay: var(--delay, 0ms);
+} */
 
 .animate-fade-right {
   opacity: 0;

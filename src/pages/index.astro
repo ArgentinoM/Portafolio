@@ -1,6 +1,7 @@
 ---
 import { } from "astro-icon";
 import About from "../components/About.astro";
+import Certification from "../components/Certification.astro";
 import Contact from "../components/Contact.astro";
 import HeaderComponent from "../components/HeaderComponent.astro";
 import ProyectList from "../components/ProyectList.astro";
@@ -28,6 +29,10 @@ const titlePage = 'Argentino Monroy - Mi portafolio';
 			<ProyectList />
 		</section>
 
+		<section id="certification" class="scroll-mt-40">
+			<Certification />
+		</section>
+
 		<section id="about" class="scroll-mt-38">
 			<About />
 		</section>
@@ -35,6 +40,7 @@ const titlePage = 'Argentino Monroy - Mi portafolio';
 		<section id="contact" class="scroll-mt-10">
 			<Contact />
 		</section>
+	
 	</main>
 
 </Layout>

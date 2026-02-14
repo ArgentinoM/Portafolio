@@ -5,7 +5,7 @@ import TitlePage from "./TitlePage.astro";
 
 <section
   id="skills"
-  class="py-20 px-6 max-w-7xl mx-auto text-center scroll-mt-24"
+  class="py-20 px-6 max-w-7xl mx-auto text-center scroll-mt-24 overflow-x-hidden"
 >
   <TitlePage title="Tecnologías y habilidades" />
 
@@ -19,7 +19,7 @@ import TitlePage from "./TitlePage.astro";
     {
       Skills.map(({ imgUrl, name }, index) => (
         <div
-          class="skill-item animate-fade-right group flex flex-col items-center gap-3 p-4 rounded-xl
+          class="animate-fade-right group flex flex-col items-center gap-3 p-4 rounded-xl
                  bg-white/10 border border-white/20
                  shadow-sm transition
                  hover:shadow-lg hover:shadow-secondary/40"

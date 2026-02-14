@@ -1,8 +1,4 @@
-interface Skill{
-    imgUrl: string;
-    name: string;
-}
-
+import type { Skill } from "../interfaces/skills.interface";
 
 export const Skills: Skill[] = [
     {
@@ -64,6 +60,10 @@ export const Skills: Skill[] = [
     {
         imgUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mariadb/mariadb-original.svg',
         name: 'mariadb'
+    },
+    {
+        imgUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg',
+        name: 'docker'
     },
     {
         imgUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg',
